@@ -1,3 +1,0 @@
-#usda 1.0
-( defaultPrim = "B" )
-def "B" ( references = @cyc_a.usda@ ) {}
