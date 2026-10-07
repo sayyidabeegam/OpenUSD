@@ -1,0 +1,15 @@
+import os
+from pxr import Usd, Sdf, Pcp
+open("a.usda", "w").write('#usda 1.0\n(\n    subLayers = [@b.usda@]\n)\n')
+open("b.usda", "w").write('#usda 1.0\n(\n    subLayers = [@a.usda@]\n)\n')
+s = Usd.Stage.Open("a.usda")
+print([type(e).__name__ for e in s.GetCompositionErrors()])
+open("asset.usda", "w").write('#usda 1.0\n(\n    defaultPrim = "C"\n)\ndef "C" {}\n')
+open("shot.usda", "w").write('#usda 1.0\ndef "R" (\n    references = @asset.usda@\n)\n{\n}\n')
+s = Usd.Stage.Open("shot.usda")
+s.MuteLayer(os.path.abspath("asset.usda"))
+print([type(e).__name__ for e in s.GetCompositionErrors()])
+print([str(e).replace(os.getcwd(), ".") for e in s.GetCompositionErrors()])
+print(s.GetPrimAtPath("/R").IsValid())
+e = s.GetCompositionErrors()
+print(e[0].rootSite.path if e else None, [n for n in dir(e[0].rootSite) if not n.startswith('_')] if e else None)

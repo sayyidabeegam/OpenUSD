@@ -1,0 +1,69 @@
+
+Tree view  ==============
+   inclusive    exclusive        
+    1.879 ms     1.869 ms       1 samples    Thread 134522647606976
+    0.005 ms     0.005 ms       1 samples    | pxrInternal_v0_26_8__pxrReserved__::UsdStage::_GetMetadata
+    0.004 ms     0.004 ms       2 samples    | pxrInternal_v0_26_8__pxrReserved__::_ComputePrimChildNamesInSubtreeImpl
+    0.001 ms     0.001 ms       1 samples    | pxrInternal_v0_26_8__pxrReserved__::_GetPrimSpecifierImpl
+    0.001 ms     0.001 ms       1 samples    | pxrInternal_v0_26_8__pxrReserved__::Usd_ClipCache::PopulateClipsForPrim
+    0.234 ms     0.002 ms       1 samples    Thread 134522630813376
+    0.229 ms     0.229 ms       1 samples    | pxrInternal_v0_26_8__pxrReserved__::PcpComputePrimIndex
+                                1 samples    |   pxrInternal_v0_26_8__pxrReserved__::PcpPrimIndex_Graph::New
+                                1 samples    |   pxrInternal_v0_26_8__pxrReserved__::_ElidePrimIndexIfProhibited
+                                1 samples    |   pxrInternal_v0_26_8__pxrReserved__::Pcp_PrimIndexIsInstanceable
+                                1 samples    |   pxrInternal_v0_26_8__pxrReserved__::PcpPrimIndex_Graph::Finalize
+    0.001 ms     0.001 ms       1 samples    | pxrInternal_v0_26_8__pxrReserved__::PcpCache::_ParallelIndexer::_PublishOutputs
+    0.001 ms     0.001 ms       1 samples    | pxrInternal_v0_26_8__pxrReserved__::_ComputePrimChildNamesInSubtreeImpl
+    0.011 ms                    1 samples    Thread 134522622416576
+    0.011 ms     0.011 ms       1 samples    | pxrInternal_v0_26_8__pxrReserved__::UsdStage::_DestroyPrimsInParallel
+    6.301 ms                    1 samples    Main Thread
+    6.302 ms     0.232 ms       1 samples    | MyScope
+    6.070 ms     0.516 ms       1 samples    |   Python func: __main__.build
+    3.578 ms     3.533 ms       2 samples    |   | pxrInternal_v0_26_8__pxrReserved__::Sdf_FileFormatRegistry::FindByExtension
+    0.042 ms     0.042 ms       1 samples    |   |   pxrInternal_v0_26_8__pxrReserved__::Sdf_FileFormatRegistry::_RegisterFormatPlugins
+    0.003 ms     0.003 ms       1 samples    |   |   pxrInternal_v0_26_8__pxrReserved__::PlugPlugin::_Load [sdf]
+    0.014 ms     0.010 ms       2 samples    |   | pxrInternal_v0_26_8__pxrReserved__::SdfLayer::_InitializeFromIdentifier
+    0.004 ms     0.004 ms       2 samples    |   |   pxrInternal_v0_26_8__pxrReserved__::Sdf_LayerRegistry::Insert
+    0.467 ms     0.058 ms       1 samples    |   | pxrInternal_v0_26_8__pxrReserved__::UsdStage::_InstantiateStage
+    0.133 ms     0.002 ms       1 samples    |   |   pxrInternal_v0_26_8__pxrReserved__::UsdStage::_ComposePrimIndexesInParallel
+    0.130 ms     0.050 ms       1 samples    |   |   | pxrInternal_v0_26_8__pxrReserved__::PcpCache::_ComputePrimIndexesInParallel
+    0.033 ms                    1 samples    |   |   |   pxrInternal_v0_26_8__pxrReserved__::PcpLayerStack
+    0.033 ms     0.032 ms       1 samples    |   |   |   | pxrInternal_v0_26_8__pxrReserved__::PcpLayerStack::_Compute
+                                2 samples    |   |   |   |   pxrInternal_v0_26_8__pxrReserved__::PcpMapFunction::Create
+    0.001 ms     0.001 ms       1 samples    |   |   |   |   pxrInternal_v0_26_8__pxrReserved__::Pcp_ComputeRelocationsForLayerStack
+    0.001 ms     0.001 ms       1 samples    |   |   |   |   | pxrInternal_v0_26_8__pxrReserved__::{anonymous}::Pcp_ComputeRelocationsForLayerStackWorkspace::Compute
+                                2 samples    |   |   |   |   |   pxrInternal_v0_26_8__pxrReserved__::{anonymous}::Pcp_ComputeRelocationsForLayerStackWorkspace::_CollectRelocatesForLayer
+                                1 samples    |   |   |   |   |   pxrInternal_v0_26_8__pxrReserved__::{anonymous}::Pcp_ComputeRelocationsForLayerStackWorkspace::_ValidateAndRemoveConflictingRelocates
+    0.041 ms     0.037 ms       1 samples    |   |   |   pxrInternal_v0_26_8__pxrReserved__::PcpComputePrimIndex
+                                1 samples    |   |   |   | pxrInternal_v0_26_8__pxrReserved__::Pcp_PrimIndexIsInstanceable
+    0.004 ms     0.000 ms       1 samples    |   |   |   | pxrInternal_v0_26_8__pxrReserved__::PcpPrimIndex_Graph::Finalize
+    0.001 ms     0.001 ms       1 samples    |   |   |   |   pxrInternal_v0_26_8__pxrReserved__::PcpPrimIndex_Graph::_ComputeStrengthOrderIndexMapping
+    0.002 ms     0.002 ms       1 samples    |   |   |   |   pxrInternal_v0_26_8__pxrReserved__::PcpPrimIndex_Graph::_ComputeEraseCulledNodeIndexMapping
+    0.004 ms     0.004 ms       2 samples    |   |   |   pxrInternal_v0_26_8__pxrReserved__::PcpCache::_ParallelIndexer::_PublishOutputs
+    0.003 ms     0.003 ms       1 samples    |   |   |   pxrInternal_v0_26_8__pxrReserved__::_ComputePrimChildNamesInSubtreeImpl
+    0.001 ms     0.001 ms       1 samples    |   |   | pxrInternal_v0_26_8__pxrReserved__::Usd_InstanceCache::ProcessChanges
+    0.276 ms     0.276 ms       1 samples    |   |   pxrInternal_v0_26_8__pxrReserved__::UsdStage::_ComposeSubtreesInParallel
+    0.726 ms     0.726 ms      10 samples    |   | pxrInternal_v0_26_8__pxrReserved__::SdfPath
+    0.054 ms     0.045 ms      10 samples    |   | pxrInternal_v0_26_8__pxrReserved__::PcpChanges::DidChange
+    0.009 ms     0.009 ms      10 samples    |   |   pxrInternal_v0_26_8__pxrReserved__::PcpCache::FindSiteDependencies
+                               10 samples    |   | pxrInternal_v0_26_8__pxrReserved__::PcpCache::FindSiteDependencies
+    0.715 ms     0.019 ms      10 samples    |   | pxrInternal_v0_26_8__pxrReserved__::UsdStage::_ProcessPendingChanges
+    0.696 ms     0.127 ms      10 samples    |   |   pxrInternal_v0_26_8__pxrReserved__::UsdStage::_Recompose
+    0.008 ms     0.008 ms      10 samples    |   |   | pxrInternal_v0_26_8__pxrReserved__::PcpCache::Apply
+    0.437 ms     0.013 ms      10 samples    |   |   | pxrInternal_v0_26_8__pxrReserved__::UsdStage::_ComposePrimIndexesInParallel
+    0.416 ms     0.358 ms      10 samples    |   |   |   pxrInternal_v0_26_8__pxrReserved__::PcpCache::_ComputePrimIndexesInParallel
+    0.045 ms     0.045 ms       9 samples    |   |   |   | pxrInternal_v0_26_8__pxrReserved__::PcpComputePrimIndex
+                                9 samples    |   |   |   |   pxrInternal_v0_26_8__pxrReserved__::PcpPrimIndex_Graph::New
+                                9 samples    |   |   |   |   pxrInternal_v0_26_8__pxrReserved__::_ElidePrimIndexIfProhibited
+                                9 samples    |   |   |   |   pxrInternal_v0_26_8__pxrReserved__::Pcp_PrimIndexIsInstanceable
+                                9 samples    |   |   |   |   pxrInternal_v0_26_8__pxrReserved__::PcpPrimIndex_Graph::Finalize
+    0.013 ms     0.013 ms      19 samples    |   |   |   | pxrInternal_v0_26_8__pxrReserved__::PcpCache::_ParallelIndexer::_PublishOutputs
+                                9 samples    |   |   |   | pxrInternal_v0_26_8__pxrReserved__::_ComputePrimChildNamesInSubtreeImpl
+    0.008 ms     0.008 ms      10 samples    |   |   |   pxrInternal_v0_26_8__pxrReserved__::Usd_InstanceCache::ProcessChanges
+    0.017 ms     0.017 ms      10 samples    |   |   | pxrInternal_v0_26_8__pxrReserved__::_ComputePrimChildNamesInSubtreeImpl
+    0.101 ms     0.089 ms      10 samples    |   |   | pxrInternal_v0_26_8__pxrReserved__::UsdStage::_ComposeSubtreesInParallel
+                                9 samples    |   |   |   pxrInternal_v0_26_8__pxrReserved__::_GetPrimSpecifierImpl
+    0.012 ms     0.012 ms       9 samples    |   |   |   pxrInternal_v0_26_8__pxrReserved__::Usd_ClipCache::PopulateClipsForPrim
+                                9 samples    |   |   |   pxrInternal_v0_26_8__pxrReserved__::_ComputePrimChildNamesInSubtreeImpl
+    0.006 ms     0.006 ms      10 samples    |   |   | pxrInternal_v0_26_8__pxrReserved__::UsdStage::_DestroyPrimsInParallel
+

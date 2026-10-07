@@ -1,0 +1,4 @@
+#usda 1.0
+over "World" {
+    double size = 5
+}
