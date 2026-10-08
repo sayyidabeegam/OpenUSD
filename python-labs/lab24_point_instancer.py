@@ -1,0 +1,30 @@
+"""Lab 24 — PointInstancer: append a prototype, hide one instance."""
+from pxr import Sdf, Usd, UsdGeom
+
+stage = Usd.Stage.CreateInMemory()
+forest = UsdGeom.PointInstancer.Define(stage, "/Forest")
+protos = stage.DefinePrim("/Forest/Protos")
+protos.SetSpecifier(Sdf.SpecifierClass)
+UsdGeom.Cone.Define(stage, "/Forest/Protos/Pine")
+UsdGeom.Cylinder.Define(stage, "/Forest/Protos/Oak")
+UsdGeom.Sphere.Define(stage, "/Forest/Protos/Bush")
+rel = forest.CreatePrototypesRel()
+rel.SetTargets(["/Forest/Protos/Pine", "/Forest/Protos/Oak"])
+rel.AddTarget("/Forest/Protos/Bush", Usd.ListPositionBackOfAppendList)
+print("targets:", [t.name for t in rel.GetTargets()])
+forest.CreateProtoIndicesAttr([0, 1, 2])
+forest.CreatePositionsAttr([(0, 0, 0), (2, 0, 0), (4, 0, 0)])
+print("instances:", forest.GetInstanceCount())
+print("traversed:", [str(p.GetPath()) for p in stage.Traverse()])
+print("is Gprim:", forest.GetPrim().IsA(UsdGeom.Gprim))
+print("is Boundable:", forest.GetPrim().IsA(UsdGeom.Boundable))
+t = Usd.TimeCode.Default()
+for m in forest.ComputeInstanceTransformsAtTime(t, t):
+    print("at", tuple(m.ExtractTranslation()))
+forest.InvisId(1, t)
+print("mask:", list(forest.ComputeMaskAtTime(t)))
+print("invisibleIds:", list(forest.GetInvisibleIdsAttr().Get()))
+print("transforms after hide:")
+for m in forest.ComputeInstanceTransformsAtTime(t, t):
+    print("at", tuple(m.ExtractTranslation()))
+print("count still:", forest.GetInstanceCount())
