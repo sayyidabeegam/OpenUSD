@@ -192,10 +192,18 @@ Validation (the `usdchecker` replacement) needs more background. It is covered w
 
 Ways to get it:
 
-1. **Build OpenUSD from source** with the `build_usd.py` script from the OpenUSD GitHub repository. Chapter 35 covers building USD.
-2. **Prebuilt binaries:** NVIDIA's OpenUSD developer resources (developer.nvidia.com/usd) offer downloads of prebuilt OpenUSD.
+1. **NVIDIA prebuilt binaries (Windows and Linux).** NVIDIA's OpenUSD developer page (developer.nvidia.com/openusd, checked 2026-10-08) offers **USD 25.08, Python 3.12** packages for **Windows** and **Linux**. Those archives include `usdview` and the rest of the USD toolset. After extracting:
 
-> [!VERIFY] Confirm which NVIDIA prebuilt download currently includes `usdview`, and for which platforms.
+   - **Windows:** run `.\scripts\usdview_gui.bat` from the extracted folder (File → Open to load a stage). `.\scripts\usdview.bat your.usda` requires a file argument.
+   - **Linux:** run `./scripts/usdview_gui.sh`. On Ubuntu, install the X11 packages listed in NVIDIA's Learn OpenUSD usdview install guide first (`libxkbcommon-x11-0` and related `libxcb-*` packages).
+
+   The same page archives **USD 25.05, Python 3.11** for Windows and Linux. The prebuilt USD version **lags** this book's verified **26.08**; `pip install usd-core` never includes `usdview`.
+
+2. **macOS:** NVIDIA does not currently ship a macOS prebuilt. Build OpenUSD from source with `build_usd.py` from the OpenUSD GitHub repository (Chapter 35). NVIDIA's Learn OpenUSD install notes say the same: usdview runs on macOS after you build it yourself.
+
+3. **Build from source** on any platform if you need a viewer that matches this book's Python API (USD 26.08).
+
+> [!VERSION] Verified 2026-10-08: NVIDIA prebuilts are USD 25.08 / Python 3.12 for Windows and Linux and include `usdview`. There is no NVIDIA macOS prebuilt. This book's labs use `usd-core` 26.8 and do not need `usdview`.
 
 ## Working folder for the labs
 

@@ -244,7 +244,7 @@ D. False — Mesh is only Imageable
 
 ### 2. Why do we need it?
 
-Obj 3.4: custom APIs are how you extend prims. The exam also asks which **base class** a custom schema should use (NVIDIA sample: physics properties on geometry → `UsdAPISchemaBase`, not reproduced here).
+Obj 3.4: custom APIs are how you extend prims. A typical “add physics-like properties to existing geometry” schema subclasses **`UsdAPISchemaBase`**, not `UsdTyped`.
 
 ### 3. Beginner explanation
 
